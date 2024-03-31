@@ -1,33 +1,30 @@
 #include <stdio.h>
 #include <math.h>
 
-// Função para calcular a potência de base elevada a expoente
-double calcularPotencia(int base, int expoente)
+double calcularPotencia(int bs, int expo)
 {
-    if (expoente >= 0)
+    if (expo >= 0)
     {
-        return pow(base, expoente);
+        return pow(bs, expo);
     }
     else
     {
-        return 1.0 / pow(base, -expoente);
+        return 1.0 / pow(bs, -expo);
     }
 }
 
 int main()
 {
-    int base, expoente;
+    int bs, expo;
 
-    // Solicita ao usuário para inserir os números inteiros
-    printf("Digite a base (número inteiro): ");
-    scanf("%d", &base);
+    printf("Digite a bs (número inteiro): ");
+    scanf("%d", &bs);
 
-    printf("Digite o expoente (número inteiro): ");
-    scanf("%d", &expoente);
+    printf("Digite o expo (número inteiro): ");
+    scanf("%d", &expo);
 
-    // Calcula a potência e imprime o resultado
-    double resultado = calcularPotencia(base, expoente);
-    printf("%d elevado a %d é igual a %.6f\n", base, expoente, resultado);
+    double resultado = calcularPotencia(bs, expo);
+    printf("%d elevado a %d é igual a %.6f\n", bs, expo, resultado);
 
     return 0;
 }

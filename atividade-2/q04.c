@@ -1,40 +1,37 @@
 #include <stdio.h>
 
-// Função para verificar se um número é primo
-int ehPrimo(int numero)
+int ehPrimo(int num)
 {
-    if (numero <= 1)
+    if (num <= 1)
     {
-        return 0; // Números menores ou iguais a 1 não são primos
+        return 0; 
     }
 
-    for (int i = 2; i * i <= numero; i++)
+    for (int i = 2; i * i <= num; i++)
     {
-        if (numero % i == 0)
+        if (num % i == 0)
         {
-            return 0; // Se o número for divisível por algum número entre 2 e sqrt(numero), não é primo
+            return 0; 
         }
     }
 
-    return 1; // Se não foi divisível por nenhum número entre 2 e sqrt(numero), é primo
+    return 1; 
 }
 
 int main()
 {
-    int numero;
+    int num;
 
-    // Solicita ao usuário para inserir um número inteiro
-    printf("Digite um número inteiro: ");
-    scanf("%d", &numero);
+    printf("Digite um número : ");
+    scanf("%d", &num);
 
-    // Verifica se o número é primo e imprime ou retorna o resultado
-    if (ehPrimo(numero))
+    if (ehPrimo(num))
     {
-        printf("%d é um número primo.\n", numero);
+        printf("%d é um número primo.\n", num);
     }
     else
     {
-        printf("%d não é um número primo.\n", numero);
+        printf("%d não é um número primo.\n", num);
     }
 
     return 0;

@@ -1,40 +1,37 @@
 #include <stdio.h>
 
-// Função para calcular a potência de base elevada a expoente
-long long int calcularPotencia(int base, int expoente)
-{
-    long long int resultado = 1;
 
-    while (expoente > 0)
+long long int calcularPotencia(int base, int expo)
+{
+    long long int result = 1;
+
+    while (expo > 0)
     {
-        resultado *= base;
-        expoente--;
+        result *= base;
+        expo--;
     }
 
-    return resultado;
+    return result;
 }
 
 int main()
 {
-    int base, expoente;
+    int base, expo;
 
-    // Solicita ao usuário para inserir os números inteiros positivos
     printf("Digite a base (número inteiro positivo): ");
     scanf("%d", &base);
 
-    printf("Digite o expoente (número inteiro positivo): ");
-    scanf("%d", &expoente);
+    printf("Digite o expo (número inteiro positivo): ");
+    scanf("%d", &expo);
 
-    // Verifica se os números são inteiros positivos
-    if (base < 0 || expoente < 0)
+    if (base < 0 || expo < 0)
     {
         printf("Por favor, insira números inteiros positivos.\n");
-        return 1; // Retorna código de erro
+        return 1; 
     }
 
-    // Calcula a potência e imprime o resultado
-    long long int resultado = calcularPotencia(base, expoente);
-    printf("%d elevado a %d é igual a %lld\n", base, expoente, resultado);
+    long long int result = calcularPotencia(base, expo);
+    printf("%d elevado a %d é igual a %lld\n", base, expo, result);
 
     return 0;
 }
